@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PANGEA · Le monde se met à table</title>
+<meta name="description" content="PANGEA, dîner du monde le jeudi 4 février 2027 : des saveurs, des plats et des pays peu connus.">
+<link rel="icon" href="assets/img/logo/pangea-favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/premium.css">
+<script>
+  document.documentElement.classList.add("js");
+  try { if (!sessionStorage.getItem("pangea-intro")) document.documentElement.classList.add("avec-intro"); } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<div class="progression" aria-hidden="true"></div>
+
+<!-- Rideau d'ouverture (première visite seulement) -->
+<div class="intro" aria-hidden="true">
+  <div class="intro-moitie intro-moitie--haut"></div>
+  <div class="intro-moitie intro-moitie--bas"></div>
+  <img class="intro-sceau" src="assets/img/logo/pangea-symbole.svg" alt="" width="64" height="64">
+</div>
+
+<header class="entete">
+  <button class="burger" type="button" aria-expanded="false" aria-controls="tiroir" aria-label="Ouvrir le menu">
+    <span class="burger-traits" aria-hidden="true"><span></span><span></span></span><span class="burger-texte">Menu</span>
+  </button>
+  <a class="entete-logo" href="#haut" aria-label="PANGEA, retour en haut"><img src="assets/img/logo/pangea-logo.svg" alt="" width="554" height="174"></a>
+  <button class="entete-reserver" type="button" data-reserver>Réserver</button>
+</header>
+
+<nav class="tiroir" id="tiroir" aria-label="Menu">
+  <div class="tiroir-formes" aria-hidden="true"><span class="forme"></span><span class="forme"></span></div>
+  <div class="tiroir-grille">
+    <div class="tiroir-liens">
+      <a href="#maison" style="--i: 0"><span class="tiroir-num">01</span><span class="tiroir-mot">La maison</span></a>
+      <a href="#carte" style="--i: 1"><span class="tiroir-num">02</span><span class="tiroir-mot">La carte</span></a>
+      <a href="#demarche" style="--i: 2"><span class="tiroir-num">03</span><span class="tiroir-mot">Notre projet</span></a>
+      <a href="#equipe" style="--i: 3"><span class="tiroir-num">04</span><span class="tiroir-mot">L’équipe</span></a>
+      <a href="#infos" style="--i: 4"><span class="tiroir-num">05</span><span class="tiroir-mot">Le dîner</span></a>
+      <a href="#questions" style="--i: 5"><span class="tiroir-num">06</span><span class="tiroir-mot">Questions</span></a>
+      <a href="#soutenir" style="--i: 6"><span class="tiroir-num">07</span><span class="tiroir-mot">Soutenir</span></a>
+    </div>
+    <div class="tiroir-aside">
+      <p class="tiroir-signature">Le monde se met à table</p>
+      <p class="tiroir-date">Jeudi 4 février 2027 · En soirée</p>
+      <button class="bouton bouton--plein" type="button" data-reserver>Réserver une table</button>
+      <p class="tiroir-contact"><a href="mailto:pangea.univ@gmail.com">pangea.univ@gmail.com</a><a href="https://www.instagram.com/pangeaoff/" rel="noopener">Instagram @pangeaoff</a></p>
+    </div>
+  </div>
+</nav>
+
+<main id="contenu">
+
+<!-- ============ Ouverture ============ -->
+<section class="ouverture" id="haut" aria-labelledby="titre">
+  <div class="ouverture-photo" aria-hidden="true"><img src="assets/img/photos/ouverture.jpg" alt=""></div>
+  <div class="ouverture-formes" aria-hidden="true"><span class="forme forme--a"></span><span class="forme forme--b"></span></div>
+  <div class="lueurs" aria-hidden="true"><span class="lueur lueur--1"></span><span class="lueur lueur--2"></span><span class="lueur lueur--3"></span></div>
+  <div class="ouverture-contenu">
+    <h1 id="titre" class="ouverture-titre" data-lettres>
+      <span class="ligne ligne--signature">Le monde</span>
+      <span class="ligne ligne--voix">se met à table</span>
+    </h1>
+    <span class="filet-or" aria-hidden="true"></span>
+    <p class="ouverture-chapo">Un dîner d’exception autour de cuisines rares,<br>imaginé par des étudiants.</p>
+    <div class="ouverture-actions">
+      <button class="bouton bouton--plein" type="button" data-reserver>Réserver une table</button>
+      <a class="lien-fleche" href="#carte">Découvrir la carte <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  <p class="ouverture-note">Jeudi 4 février 2027 · En soirée</p>
+</section>
+
+<!-- ============ La maison ============ -->
+<section class="maison" id="maison" aria-labelledby="titre-maison">
+  <img class="monogramme" src="assets/img/logo/pangea-symbole.svg" alt="" width="64" height="64">
+  <h2 id="titre-maison" class="maison-texte" data-mots>
+    Des plats que l’on goûte <em>rarement</em>, des pays dont on parle <em>peu</em>, et une table où chacun a <em>sa place</em>.
+  </h2>
+  <p class="maison-signature">Le goût, l’amitié et le partage</p>
+  <figure class="photo photo--large" style="--ratio: 2 / 1">
+    <div class="photo-cadre">
+      <div class="photo-attente" aria-hidden="true"><span class="photo-attente-titre">Une table dressée, à la lumière du soir</span><span class="photo-attente-fichier">assets/img/photos/ambiance-table.jpg</span></div>
+      <img src="assets/img/photos/ambiance-table.jpg" alt="Une table dressée pour le dîner du monde" loading="lazy">
+    </div>
+    <figcaption>Une table dressée, à la lumière du soir</figcaption>
+  </figure>
+</section>
+
+<!-- ============ La carte ============ -->
+<section class="carte" id="carte" aria-labelledby="titre-carte">
+  <p class="surtitre petites-capitales">La carte</p>
+  <h2 id="titre-carte" class="titre-section" data-lettres>Menu du monde</h2>
+  <p class="carte-formule">Entrée, plat et dessert au choix. Une cuisine différente dans chaque assiette.</p>
+  <div class="services">
+    <article class="service service--entree">
+      <div class="service-aplat" aria-hidden="true">
+        <span class="service-fond"></span>
+        <span class="service-num">1</span>
+        <span class="service-signature">entrée</span>
+      </div>
+      <div class="service-papier">
+        <h3 class="service-tete"><span class="service-tete-num">01</span><span>Entrée</span></h3>
+        <p class="service-choix">Au choix</p>
+        <ul>
+          <li class="mets"><p class="mets-ligne"><span class="mets-nom">Mercimek köftesi</span><span class="mets-pays">Turquie</span></p><p class="mets-desc">lentilles corail, boulgour, cumin et citron</p></li>
+          <li class="mets"><p class="mets-ligne"><span class="mets-nom">Zaalouk</span><span class="mets-pays">Maroc</span></p><p class="mets-desc">aubergines fondantes, tomate, paprika</p></li>
+          <li class="mets"><p class="mets-ligne"><span class="mets-nom">Bolinho de arroz</span><span class="mets-pays">Brésil</span></p><p class="mets-desc">croquettes de riz au fromage et au persil</p></li>
+        </ul>
+      </div>
+    </article>
+    <article class="service service--plat">
+      <div class="service-aplat" aria-hidden="true">
+        <span class="service-fond"></span>
+        <span class="service-num">2</span>
+        <span class="service-signature">plat</span>
+      </div>
+      <div class="service-papier">
+        <h3 class="service-tete"><span class="service-tete-num">02</span><span>Plat</span></h3>
+        <p class="service-choix">Au choix</p>
+        <ul>
+          <li class="mets"><p class="mets-ligne"><span class="mets-nom">Thiébou niébé</span><span class="mets-pays">Sénégal</span></p><p class="mets-desc">riz brisé, niébé, sauce tomate pimentée</p></li>
+          <li class="mets"><p class="mets-ligne"><span class="mets-nom">Plov</span><span class="mets-pays">Ouzbékistan</span></p><p class="mets-desc">riz, agneau, carottes, pois chiches, cumin</p></li>
+          <li class="mets"><p class="mets-ligne"><span class="mets-nom">Bolani</span><span class="mets-pays">Afghanistan</span></p><p class="mets-desc">galette à la pomme de terre, sauce au yaourt</p></li>
+        </ul>
+      </div>
+    </article>
+    <article class="service service--dessert">
+      <div class="service-aplat" aria-hidden="true">
+        <span class="service-fond"></span>
+        <span class="service-num">3</span>
+        <span class="service-signature">dessert</span>
+      </div>
+      <div class="service-papier">
+        <h3 class="service-tete"><span class="service-tete-num">03</span><span>Dessert</span></h3>
+        <p class="service-choix">Au choix</p>
+        <ul>
+          <li class="mets"><p class="mets-ligne"><span class="mets-nom">Malva pudding</span><span class="mets-pays">Afrique du Sud</span></p><p class="mets-desc">gâteau moelleux à l’abricot, crème au beurre</p></li>
+          <li class="mets"><p class="mets-ligne"><span class="mets-nom">Suji halwa</span><span class="mets-pays">Inde</span></p><p class="mets-desc">semoule au ghee, cardamome, amandes</p></li>
+          <li class="mets"><p class="mets-ligne"><span class="mets-nom">Peach cobbler</span><span class="mets-pays">États-Unis</span></p><p class="mets-desc">pêches au four sous une pâte beurrée</p></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+  <p class="carte-note">Tous nos plats sont végétariens, sauf le plov. Allergènes et origine des viandes indiqués à table.<br>Premières propositions&nbsp;: la carte définitive sera choisie par les étudiants, puis élaborée avec l’équipe en cuisine.</p>
+</section>
+
+<!-- ============ Interlude : deux lignes qui se rejoignent ============ -->
+<section class="interlude" aria-label="Neuf cuisines, une seule table">
+  <div class="interlude-scene">
+    <div class="formes" aria-hidden="true"><span class="forme forme--1"></span><span class="forme forme--2"></span><span class="forme forme--3"></span></div>
+    <p class="interlude-ligne interlude-ligne--1">Neuf cuisines.</p>
+    <p class="interlude-ligne interlude-ligne--2"><em>Une seule table.</em></p>
+  </div>
+</section>
+
+<!-- ============ La démarche ============ -->
+<section class="demarche" id="demarche" aria-labelledby="titre-demarche">
+  <p class="surtitre petites-capitales">Notre projet</p>
+  <h2 id="titre-demarche" class="titre-section" data-lettres>Une table, trois savoir-faire</h2>
+  <div class="augier">
+    <p class="augier-titre">En cuisine et en salle, <em>les élèves du lycée hôtelier Paul&nbsp;Augier</em></p>
+    <p class="augier-texte">Le lycée Paul Augier, à Nice, prépare déjà des menus et des repas dans ses propres locaux pour former ses élèves. Nous souhaitons leur confier la cuisine, le service et l’élaboration d’un menu fidèle à nos valeurs&nbsp;: une soirée en conditions réelles pour leur apprentissage. En échange, PANGEA prend en charge la gestion financière, l’organisation et la communication.</p>
+    <p class="augier-statut">Partenariat en cours de discussion</p>
+  </div>
+  <div class="photos-duo">
+  <figure class="photo photo--brigade" style="--ratio: 16 / 9; --cadrage: 50% 45%">
+    <div class="photo-cadre">
+      <div class="photo-attente" aria-hidden="true"><span class="photo-attente-titre">En cuisine</span><span class="photo-attente-fichier">assets/img/photos/lycee-cuisine.jpg</span></div>
+      <img src="assets/img/photos/lycee-cuisine.jpg" alt="Les élèves du lycée Paul Augier en cuisine" loading="lazy">
+    </div>
+    <figcaption>En cuisine</figcaption>
+  </figure>
+  <figure class="photo photo--decalee" style="--ratio: 4 / 3; --cadrage: 60% 40%">
+    <div class="photo-cadre">
+      <div class="photo-attente" aria-hidden="true"><span class="photo-attente-titre">Au service</span><span class="photo-attente-fichier">assets/img/photos/lycee-salle.jpg</span></div>
+      <img src="assets/img/photos/lycee-salle.jpg" alt="Le service en salle au lycée Paul Augier" loading="lazy">
+    </div>
+    <figcaption>Au service</figcaption>
+  </figure>
+  </div>
+  <div class="piliers">
+    <article class="pilier">
+      <h3>Choisie par vous</h3>
+      <p>Un sondage auprès des étudiants décide des cuisines servies. Une recette de famille, de voyage&nbsp;? Proposez-la.</p>
+    </article>
+    <article class="pilier">
+      <h3>Cuisinée et servie par les élèves</h3>
+      <p>Les élèves du lycée hôtelier Paul Augier en cuisine et au service, accompagnés par leurs enseignants.</p>
+    </article>
+    <article class="pilier">
+      <h3>Orchestrée par PANGEA</h3>
+      <p>Organisation, budget et communication&nbsp;: l’association veille à chaque détail.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ Le dîner : le carton ============ -->
+<!-- ============ L'équipe ============ -->
+<section class="equipe" id="equipe" aria-labelledby="titre-equipe">
+  <p class="surtitre petites-capitales">L’association</p>
+  <h2 id="titre-equipe" class="titre-section" data-lettres>Les visages du projet</h2>
+  <p class="equipe-chapo">PANGEA est une association étudiante en cours de création, fondée par quatre étudiants de BUT GEA à l’<span data-iut>IUT Nice Côte d’Azur</span>, dans le cadre d’un projet pédagogique (SAE).</p>
+  <ul class="bureau">
+      <li class="membre">
+        <div class="portrait"><img src="assets/img/bureau/loic-karrer.jpg" alt="Portrait de Loïc Karrer" width="800" height="1000" loading="lazy"></div>
+        <p class="membre-role">Président</p>
+        <h3 class="membre-nom">Loïc KARRER</h3>
+      </li>
+      <li class="membre">
+        <div class="portrait"><span class="portrait-initiales" aria-hidden="true">JP</span></div>
+        <p class="membre-role">Vice-présidente</p>
+        <h3 class="membre-nom">Julie PEYRET</h3><p class="membre-note">Photo à venir</p>
+      </li>
+      <li class="membre">
+        <div class="portrait"><img src="assets/img/bureau/lina-razgallah.jpg" alt="Illustration représentant Lina Razgallah" width="800" height="1000" loading="lazy"></div>
+        <p class="membre-role">Secrétaire</p>
+        <h3 class="membre-nom">Lina RAZGALLAH</h3>
+      </li>
+      <li class="membre">
+        <div class="portrait"><img src="assets/img/bureau/leon-simoni.jpg" alt="Portrait de Léon Simoni" width="800" height="1000" loading="lazy"></div>
+        <p class="membre-role">Trésorier</p>
+        <h3 class="membre-nom">Léon SIMONI</h3>
+      </li>
+  </ul>
+  <figure class="photo photo--equipe" style="--ratio: 3 / 2">
+    <div class="photo-cadre">
+      <div class="photo-attente" aria-hidden="true"><span class="photo-attente-titre">L’équipe au complet</span><span class="photo-attente-fichier">assets/img/photos/equipe.jpg</span></div>
+      <img src="assets/img/photos/equipe.jpg" alt="L’équipe de PANGEA réunie" loading="lazy">
+    </div>
+    <figcaption>L’équipe au complet</figcaption>
+  </figure>
+  <p class="equipe-objet"><span class="petites-capitales">Notre objet</span>Promouvoir la diversité culturelle et les échanges interculturels entre étudiants, notamment par des événements culinaires, culturels et festifs.</p>
+</section>
+
+<!-- ============ Les engagements ============ -->
+<section class="engagements" aria-labelledby="titre-engagements">
+  <h2 id="titre-engagements" class="titre-section" data-lettres>Nos engagements</h2>
+  <div class="engagements-grille">
+    <div class="engagements-colonne">
+      <p class="surtitre petites-capitales">À table</p>
+      <dl>
+        <div><dt>Allergènes affichés</dt><dd>Pour chaque plat, les 14 allergènes réglementaires sont indiqués.</dd></div>
+        <div><dt>Origine des viandes</dt><dd>L’origine des viandes est indiquée sur place.</dd></div>
+        <div><dt>Option végétarienne</dt><dd>Au moins un des plats principaux est végétarien.</dd></div>
+        <div><dt>Photos avec accord</dt><dd>Les photos sont prises uniquement avec le consentement des personnes.</dd></div>
+      </dl>
+    </div>
+    <div class="engagements-colonne">
+      <p class="surtitre petites-capitales">En coulisses</p>
+      <dl>
+        <div><dt>Bénévoles</dt><dd>Tous les membres agissent bénévolement.</dd></div>
+        <div><dt>Comptes votés</dt><dd>Les comptes sont votés en assemblée générale.</dd></div>
+        <div><dt>Dons tracés</dt><dd>Les dons sont versés uniquement sur le compte bancaire de l’association.</dd></div>
+        <div><dt>Dépenses justifiées</dt><dd>Chaque dépense est justifiée.</dd></div>
+        <div><dt>Partenaires respectés</dt><dd>Aucun partenaire n’est cité sans son accord écrit.</dd></div>
+      </dl>
+    </div>
+  </div>
+  <p class="section-note">Le repas sera encadré par une convention avec notre partenaire, une fois son accord obtenu.</p>
+</section>
+
+<!-- ============ Le calendrier ============ -->
+<section class="calendrier" id="calendrier" aria-labelledby="titre-calendrier">
+  <h2 id="titre-calendrier" class="titre-section" data-lettres>Le projet pas à pas</h2>
+  <ol class="etapes">
+      <li class="etape etape--fait">
+        <span class="etape-numero" aria-hidden="true">01</span>
+        <p class="etape-quand">16 octobre 2026</p>
+        <h3 class="etape-titre">Assemblée générale constitutive</h3>
+        <p class="etape-texte">Les membres fondent l’association.</p>
+      </li>
+      <li class="etape etape--fait">
+        <span class="etape-numero" aria-hidden="true">02</span>
+        <p class="etape-quand">Fin octobre 2026</p>
+        <h3 class="etape-titre">Déclaration en préfecture</h3>
+        <p class="etape-texte">L’association est déclarée.</p>
+      </li>
+      <li class="etape etape--en-cours">
+        <span class="etape-numero" aria-hidden="true">03</span>
+        <p class="etape-quand">En cours</p>
+        <h3 class="etape-titre">Partenariat avec le lycée Paul Augier</h3>
+        <p class="etape-texte">Nous construisons le projet avec le lycée hôtelier Paul Augier, à Nice.</p>
+      </li>
+      <li class="etape">
+        <span class="etape-numero" aria-hidden="true">04</span>
+        <p class="etape-quand">À venir</p>
+        <h3 class="etape-titre">Sondage sur les cuisines</h3>
+        <p class="etape-texte">Les étudiants votent pour les cuisines du repas.</p>
+      </li>
+      <li class="etape">
+        <span class="etape-numero" aria-hidden="true">05</span>
+        <p class="etape-quand">À venir</p>
+        <h3 class="etape-titre">Menu définitif</h3>
+        <p class="etape-texte">Publication du menu et des fiches allergènes.</p>
+      </li>
+      <li class="etape">
+        <span class="etape-numero" aria-hidden="true">06</span>
+        <p class="etape-quand">Date à confirmer</p>
+        <h3 class="etape-titre">Le repas du monde</h3>
+        <p class="etape-texte">Date, horaires et lieu bientôt annoncés.</p>
+      </li>
+      <li class="etape">
+        <span class="etape-numero" aria-hidden="true">07</span>
+        <p class="etape-quand">Après le repas</p>
+        <h3 class="etape-titre">Bilan</h3>
+        <p class="etape-texte">Résultats du questionnaire et assemblée générale.</p>
+      </li>
+  </ol>
+  <p class="section-note">Calendrier prévisionnel, précisé dès que le partenariat sera confirmé.</p>
+</section>
+
+<section class="infos" id="infos" aria-labelledby="titre-infos">
+  <figure class="photo photo--lieu" style="--ratio: 4 / 5">
+    <div class="photo-cadre">
+      <div class="photo-attente" aria-hidden="true"><span class="photo-attente-titre">Le lieu du dîner</span><span class="photo-attente-fichier">assets/img/photos/lieu.jpg</span></div>
+      <img src="assets/img/photos/lieu.jpg" alt="La salle où se tiendra le dîner du monde" loading="lazy">
+    </div>
+    <figcaption>Le lieu du dîner</figcaption>
+  </figure>
+  <div class="carton-scene">
+    <div class="carton">
+      <img class="carton-monogramme" src="assets/img/logo/pangea-symbole.svg" alt="" width="64" height="64">
+      <p class="carton-surtitre">Invitation</p>
+      <h2 id="titre-infos" class="carton-titre">Le dîner du monde</h2>
+      <p class="carton-date"><span class="carton-jour">Jeudi</span> <span class="carton-quantieme">4</span> <span class="carton-mois">février 2027</span> <span class="carton-soir">En soirée</span></p>
+      <dl class="carton-infos">
+        <div><dt>Lieu</dt><dd>À confirmer</dd></div>
+        <div><dt>Prix</dt><dd>À confirmer</dd></div>
+        <div><dt>Réservation</dt><dd>Sur demande</dd></div>
+      </dl>
+      <p class="carton-texte">Le lieu et le prix seront annoncés dès que le partenariat sera confirmé. Vous pouvez déjà demander une table, sous réserve de places disponibles.</p>
+      <div class="carton-actions">
+        <button class="bouton bouton--sombre" type="button" data-reserver>Réserver une table</button>
+        <a class="lien-souligne" href="https://www.instagram.com/pangeaoff/" rel="noopener">Suivre @pangeaoff</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Soutenir ============ -->
+<!-- ============ Questions ============ -->
+<section class="questions" id="questions" aria-labelledby="titre-questions">
+  <h2 id="titre-questions" class="titre-section" data-lettres>Vos questions</h2>
+  <div class="faq">
+    <details class="faq-item">
+      <summary><span>Combien coûte le repas&nbsp;?</span><span class="faq-signe" aria-hidden="true"></span></summary>
+      <div class="faq-reponse"><p>Le prix sera annoncé avec les autres informations pratiques.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>Faut-il réserver&nbsp;?</span><span class="faq-signe" aria-hidden="true"></span></summary>
+      <div class="faq-reponse"><p>Les modalités de réservation seront précisées avec notre partenaire, puis annoncées ici et sur Instagram (<a href="https://www.instagram.com/pangeaoff/" rel="noopener">@pangeaoff</a>).</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>Qui pourra venir&nbsp;?</span><span class="faq-signe" aria-hidden="true"></span></summary>
+      <div class="faq-reponse"><p>Le public et le nombre de places seront précisés avec notre partenaire.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>Y aura-t-il un plat végétarien&nbsp;?</span><span class="faq-signe" aria-hidden="true"></span></summary>
+      <div class="faq-reponse"><p>Oui, au moins un des plats principaux sera végétarien. Les mentions végan, végétarien et sans gluten seront publiées pour chaque plat avec le menu.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>J’ai une allergie, comment savoir ce que je peux manger&nbsp;?</span><span class="faq-signe" aria-hidden="true"></span></summary>
+      <div class="faq-reponse"><p>Les allergènes sont affichés sur place pour chaque plat. Les fiches allergènes seront aussi publiées avec le menu définitif.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>Qui cuisine&nbsp;?</span><span class="faq-signe" aria-hidden="true"></span></summary>
+      <div class="faq-reponse"><p>Nous souhaitons confier la cuisine et le service aux élèves du lycée hôtelier Paul Augier, à Nice&nbsp;: le partenariat est en cours de discussion. De notre côté, l’association s’occupe de l’organisation, du budget et de la communication.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>Comment le menu est-il choisi&nbsp;?</span><span class="faq-signe" aria-hidden="true"></span></summary>
+      <div class="faq-reponse"><p>Par un sondage auprès des étudiants, puis construit avec l’équipe qui cuisinera le repas, autour de nos valeurs&nbsp;: saveurs du monde, plats et pays peu connus.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary><span>Vais-je être pris en photo&nbsp;?</span><span class="faq-signe" aria-hidden="true"></span></summary>
+      <div class="faq-reponse"><p>Les photos sont prises uniquement avec le consentement des personnes.</p></div>
+    </details>
+  </div>
+  <p class="section-note">Une autre question&nbsp;? <a class="lien-or" href="mailto:pangea.univ@gmail.com">pangea.univ@gmail.com</a></p>
+</section>
+
+<section class="soutenir" id="soutenir" aria-labelledby="titre-soutenir">
+  <h2 id="titre-soutenir" class="titre-section" data-lettres>Prendre part au dîner</h2>
+  <div class="soutenir-liste">
+    <a class="ligne-lien" href="mailto:pangea.univ@gmail.com"><span>Devenir partenaire</span><small>Entreprises, associations, professionnels</small></a>
+    <a class="ligne-lien" href="mailto:pangea.univ@gmail.com"><span>Faire un don</span><small>Dons des particuliers limités à 20&nbsp;€ par personne</small></a>
+    <a class="ligne-lien" href="mailto:pangea.univ@gmail.com"><span>Rejoindre l’équipe du soir</span><small>Accueil, décoration, rangement</small></a>
+    <a class="ligne-lien" href="https://www.instagram.com/pangeaoff/" rel="noopener"><span>La boutique</span><small>Précommandes bientôt ouvertes</small></a>
+  </div>
+  <p class="section-note">Les dons sont versés uniquement sur le compte bancaire de l’association, qui remet une attestation de don aux entreprises. L’association ne délivre pas de reçu fiscal.</p>
+</section>
+
+</main>
+
+
+<!-- ============ Demande de réservation ============ -->
+<dialog class="reservation" id="reservation" aria-labelledby="titre-reservation">
+  <form class="reservation-carton" method="dialog" novalidate>
+    <button class="reservation-fermer" type="button" data-fermer aria-label="Fermer">×</button>
+    <p class="surtitre petites-capitales">Le dîner du monde · Jeudi 4 février 2027</p>
+    <h2 id="titre-reservation" class="reservation-titre">Réserver une table</h2>
+    <p class="reservation-chapo">Votre demande est enregistrée sous réserve de places disponibles. L’équipe vous confirme ensuite votre table.</p>
+    <p class="reservation-places" hidden><span></span> couverts encore disponibles</p>
+    <div class="reservation-grille">
+      <label class="champ"><span>Prénom</span><input name="prenom" autocomplete="given-name" required></label>
+      <label class="champ"><span>Nom</span><input name="nom" autocomplete="family-name" required></label>
+      <label class="champ"><span>E-mail</span><input name="email" type="email" autocomplete="email" required></label>
+      <label class="champ"><span>Téléphone</span><input name="telephone" type="tel" autocomplete="tel" required></label>
+      <div class="champ champ--couverts">
+        <span id="libelle-couverts">Nombre de couverts</span>
+        <div class="couverts" role="group" aria-labelledby="libelle-couverts">
+          <button type="button" data-moins aria-label="Un couvert de moins">−</button>
+          <output name="couverts" aria-live="polite">2</output>
+          <button type="button" data-plus aria-label="Un couvert de plus">+</button>
+        </div>
+      </div>
+      <label class="champ"><span>Vous êtes</span>
+        <select name="profil">
+          <option>Étudiant ou étudiante</option>
+          <option>Enseignant ou personnel</option>
+          <option>Famille ou ami</option>
+          <option>Partenaire</option>
+          <option>Autre</option>
+        </select>
+      </label>
+      <label class="champ-piege" aria-hidden="true">Site web<input name="site" tabindex="-1" autocomplete="off"></label>
+      <label class="champ champ--large"><span>Allergies, régime, remarque <small>(facultatif)</small></span><textarea name="remarque" rows="3"></textarea></label>
+    </div>
+    <label class="accord"><input type="checkbox" name="accord" required><span>J’ai compris que cette demande ne vaut confirmation qu’après la réponse de PANGEA, sous réserve de places disponibles. J’accepte que mes coordonnées, et mes allergies si je les indique, servent uniquement à traiter ma réservation et à adapter mon repas (<a href="conditions.html#reservation" target="_blank">conditions</a>, <a href="mentions-legales.html#donnees" target="_blank">données personnelles</a>).</span></label>
+    <p class="reservation-erreur" role="alert" hidden></p>
+    <div class="reservation-actions">
+      <button class="bouton bouton--plein" type="submit">Envoyer ma demande</button>
+      <p class="reservation-aide">Vous recevez un accusé de réception par e-mail.</p>
+    </div>
+    <div class="reservation-merci" hidden>
+      <p class="reservation-titre">Merci&nbsp;!</p>
+      <p class="reservation-merci-texte">Votre demande est bien enregistrée. Nous revenons vers vous très vite pour confirmer votre table.</p>
+      <button class="bouton" type="button" data-fermer>Fermer</button>
+    </div>
+  </form>
+</dialog>
+
+<footer class="pied">
+  <a class="pied-haut" href="#haut">Remonter</a>
+  <div class="pied-logo-cadre"><img class="pied-logo" src="assets/img/logo/pangea-logo.svg" alt="PANGEA" width="554" height="174" loading="lazy"></div>
+  <p class="pied-devise">Le goût, l’amitié et le partage</p>
+  <div class="pied-contact">
+    <a class="contact" href="mailto:pangea.univ@gmail.com">
+      <span class="contact-libelle">Nous écrire</span>
+      <span class="contact-valeur">pangea.univ@gmail.com</span>
+      <span class="contact-fleche" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="contact" href="https://www.instagram.com/pangeaoff/" rel="noopener">
+      <span class="contact-libelle">Nous suivre sur Instagram</span>
+      <span class="contact-valeur">@pangeaoff</span>
+      <span class="contact-fleche" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+  <p class="pied-legal"><a href="mentions-legales.html">Mentions légales et confidentialité</a><a href="conditions.html">Conditions d’utilisation et de réservation</a></p>
+  <p class="pied-mentions">© 2026 PANGEA · Site réalisé par Loïc KARRER</p>
+</footer>
+
+<script src="assets/js/vendor/gsap.min.js"></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/js/vendor/lenis.min.js"></script>
+<script src="assets/js/premium.js"></script>
+</body>
+</html>
