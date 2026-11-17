@@ -5,16 +5,67 @@
  *
  * Chaque demande envoyée depuis le site devient une ligne de la feuille « Réservations ».
  * Tant qu'il reste des couverts, la demande est « Reçue » ; au-delà, elle passe en « Liste d'attente ».
- * Pour annuler une réservation, écrivez « Annulée » dans la colonne Statut : ses couverts sont libérés.
+ * Dans la colonne Statut, un menu déroulant permet de choisir « Confirmée » ou « Annulée » :
+ * le visiteur reçoit alors automatiquement un e-mail (une seule fois par statut).
+ * Une réservation annulée libère ses couverts.
+ *
+ * Après avoir collé ce script, exécutez UNE FOIS la fonction « installer » (voir LISEZMOI.md).
  */
 
-const CAPACITE = 60;                 // nombre total de couverts (à ajuster avec le lycée)
+const CAPACITE = 80;                 // nombre total de couverts
 const COUVERTS_MAX_PAR_DEMANDE = 10;
 const ENVOYER_ACCUSE = true;         // accusé de réception automatique au visiteur
 const PREVENIR_ASSO = true;          // e-mail à l'association à chaque nouvelle demande
 const FEUILLE = 'Réservations';
-const ENTETES = ['Date', 'Prénom', 'Nom', 'E-mail', 'Téléphone', 'Couverts', 'Profil', 'Remarque', 'Statut'];
+const ENTETES = ['Date', 'Prénom', 'Nom', 'E-mail', 'Téléphone', 'Couverts', 'Profil', 'Remarque', 'Statut', 'E-mail de statut envoyé'];
+const STATUTS = ['Reçue', 'Confirmée', "Liste d'attente", 'Annulée'];
+const COL_STATUT = 9, COL_SUIVI = 10;
 
+/* ---------- À exécuter une seule fois : menu déroulant + envoi automatique ---------- */
+function installer() {
+  const f = feuille_();
+  if (!f.getRange(1, COL_SUIVI).getValue()) f.getRange(1, COL_SUIVI).setValue(ENTETES[COL_SUIVI - 1]).setFontWeight('bold');
+  f.getRange(2, COL_STATUT, f.getMaxRows() - 1, 1).setDataValidation(regleStatut_());
+  ScriptApp.getProjectTriggers()
+    .filter((t) => t.getHandlerFunction() === 'quandStatutChange')
+    .forEach((t) => ScriptApp.deleteTrigger(t));
+  ScriptApp.newTrigger('quandStatutChange').forSpreadsheet(SpreadsheetApp.getActive()).onEdit().create();
+  SpreadsheetApp.getActive().toast('Menu déroulant et e-mails automatiques installés.', 'PANGEA', 6);
+}
+
+/* ---------- Déclenché à chaque modification du tableur ---------- */
+function quandStatutChange(e) {
+  const r = e && e.range;
+  if (!r) return;
+  const f = r.getSheet();
+  const premiere = r.getColumn(), derniere = premiere + r.getNumColumns() - 1;
+  if (f.getName() !== FEUILLE || premiere > COL_STATUT || derniere < COL_STATUT || r.getRow() + r.getNumRows() - 1 < 2) return;
+
+  for (let i = 0; i < r.getNumRows(); i++) {
+    const ligne = r.getRow() + i;
+    if (ligne < 2) continue;
+    const [, prenom, , email, , couverts, , , statut, suivi] = f.getRange(ligne, 1, 1, COL_SUIVI).getValues()[0];
+    if (!email || (statut !== 'Confirmée' && statut !== 'Annulée')) continue;
+    if (String(suivi).indexOf(statut) === 0) continue;          // déjà prévenu pour ce statut
+
+    const message = statut === 'Confirmée'
+      ? {
+          subject: 'Votre table est confirmée pour le dîner du monde',
+          body: `Bonjour ${prenom},\n\nBonne nouvelle : votre table est confirmée pour le dîner du monde du jeudi 4 février 2027, en soirée, pour ${couverts} couvert(s).\n\n` +
+            'Nous vous enverrons les informations pratiques avant le dîner. Si vous avez un empêchement, répondez simplement à cet e-mail pour libérer votre place.\n\n' +
+            "À très vite à table,\nL'équipe PANGEA",
+        }
+      : {
+          subject: 'Votre réservation pour le dîner du monde est annulée',
+          body: `Bonjour ${prenom},\n\nVotre réservation de ${couverts} couvert(s) pour le dîner du monde du jeudi 4 février 2027 a été annulée.\n\n` +
+            "S'il s'agit d'une erreur, répondez simplement à cet e-mail et nous reprendrons votre demande.\n\nL'équipe PANGEA",
+        };
+    MailApp.sendEmail({ to: String(email), name: 'PANGEA', subject: message.subject, body: message.body });
+    f.getRange(ligne, COL_SUIVI).setValue(`${statut} · ${Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'dd/MM/yyyy HH:mm')}`);
+  }
+}
+
+/* ---------- Le site : places restantes et nouvelles demandes ---------- */
 function doGet() {
   return json_({ ok: true, capacite: CAPACITE, restantes: Math.max(0, CAPACITE - couvertsPris_()) });
 }
@@ -31,7 +82,9 @@ function doPost(e) {
     const restantes = CAPACITE - couvertsPris_();
     const statut = couverts <= restantes ? 'Reçue' : "Liste d'attente";
 
-    feuille_().appendRow([new Date(), prenom, nom, email, "'" + tel.replace(/^'/, ''), couverts, nettoie_(p.profil), nettoie_(p.remarque, 500), statut]);
+    const f = feuille_();
+    f.appendRow([new Date(), prenom, nom, email, "'" + tel.replace(/^'/, ''), couverts, nettoie_(p.profil), nettoie_(p.remarque, 500), statut, '']);
+    f.getRange(f.getLastRow(), COL_STATUT).setDataValidation(regleStatut_());
 
     const resume = `${prenom} ${nom}\n${couverts} couvert(s)\nTéléphone : ${tel}\nE-mail : ${email}\nProfil : ${nettoie_(p.profil)}\nRemarque : ${nettoie_(p.remarque, 500) || 'aucune'}`;
     if (ENVOYER_ACCUSE) {
@@ -62,6 +115,10 @@ function feuille_() {
   if (!f) f = classeur.insertSheet(FEUILLE);
   if (f.getLastRow() === 0) { f.appendRow(ENTETES); f.setFrozenRows(1); f.getRange(1, 1, 1, ENTETES.length).setFontWeight('bold'); }
   return f;
+}
+
+function regleStatut_() {
+  return SpreadsheetApp.newDataValidation().requireValueInList(STATUTS, true).setAllowInvalid(false).build();
 }
 
 function couvertsPris_() {
