@@ -685,3 +685,52 @@ html.lenis, html.lenis body { height: auto; }
   .interlude-ligne { font-size: 11.5vw; }
   .interlude-ligne--1 { font-size: 7.4vw; }
 }
+
+/* ---------- Page « Les cartes » : les imprimés du dîner ---------- */
+.cartes { max-width: 72rem; margin: 0 auto; padding: clamp(9rem, 16vw, 11rem) var(--gouttiere) clamp(4rem, 8vw, 6rem); }
+.cartes .titre-section { text-align: center; }
+.cartes-bloc { margin-top: clamp(3.5rem, 7vw, 5rem); text-align: center; scroll-margin-top: 7rem; }
+.cartes-titre { font-family: var(--signature); font-weight: 400; font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--or); line-height: 1.1; }
+.cartes-texte { margin: 0.8rem auto 0; max-width: 34rem; color: var(--creme-doux); }
+.cartes-duo, .cartes-trio { display: grid; gap: clamp(1rem, 3vw, 2rem); margin-top: clamp(1.8rem, 4vw, 2.6rem); }
+.cartes-duo { grid-template-columns: 1fr 1fr; max-width: 58rem; margin-inline: auto; }
+.cartes-trio { grid-template-columns: repeat(3, 1fr); }
+.cartes-page { display: block; overflow: hidden; box-shadow: 0 1.4rem 3rem rgb(0 0 0 / 0.45); outline-offset: 4px; }
+.cartes-page img { display: block; width: 100%; height: auto; transition: transform 0.9s var(--lent); }
+@media (hover: hover) { .cartes-page:hover img { transform: scale(1.025); } }
+.cartes-pdf { margin-top: 1.8rem; }
+.cartes-note { margin-top: 1rem; font-size: 0.78rem; color: var(--creme-doux); }
+.cartes-reserver { margin-top: clamp(3.5rem, 7vw, 5rem); text-align: center; }
+.carte-lien { margin-top: 1.6rem; text-align: center; }
+@media (max-width: 700px) {
+  .cartes-duo { grid-template-columns: 1fr; max-width: 26rem; }
+  .cartes-trio { grid-template-columns: 1fr; max-width: 26rem; margin-inline: auto; }
+}
+
+/* ---------- Page « Boutique » : World Dinner Club ---------- */
+.boutique { max-width: 76rem; margin: 0 auto; padding: clamp(9rem, 16vw, 11rem) var(--gouttiere) clamp(4rem, 8vw, 6rem); }
+.boutique-tete { text-align: center; }
+.boutique-titre { margin: 0.6rem 0 0; font-weight: 400; line-height: 1; }
+.boutique-signature { display: block; font-family: var(--signature); font-size: clamp(2.6rem, 7vw, 5rem); color: var(--or); }
+.boutique-voix { display: block; font-family: var(--display); font-size: clamp(5rem, 16vw, 11rem); letter-spacing: 0.04em; line-height: 0.9; -webkit-text-stroke: var(--epaisseur) currentColor; }
+.boutique-statut { display: inline-block; margin-top: 1.8rem; padding: 0.55rem 1.1rem; border: 1px solid var(--or-trait); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--or); }
+.boutique-grille { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(2.2rem, 4vw, 3rem) clamp(1rem, 2.4vw, 1.8rem); margin-top: clamp(3.5rem, 7vw, 5rem); }
+.produit-image { position: relative; overflow: hidden; border-radius: 3px; }
+.produit-image img { display: block; width: 100%; height: auto; transition: transform 1s var(--lent); }
+@media (hover: hover) { .produit:hover .produit-image img { transform: scale(1.04); } }
+.produit-num { position: absolute; top: 0.8rem; left: 0.9rem; font-family: var(--chiffres); font-size: 0.9rem; color: var(--creme); text-shadow: 0 1px 6px rgb(0 0 0 / 0.45); }
+.produit-texte { padding-top: 1.1rem; }
+.produit-nom { font-family: var(--display); font-weight: 400; font-size: 1.35rem; letter-spacing: 0.03em; line-height: 1.1; -webkit-text-stroke: var(--epaisseur) currentColor; }
+.produit-desc { margin-top: 0.5rem; font-size: 0.86rem; line-height: 1.6; color: var(--creme-doux); }
+.produit-coloris { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin: 0.8rem 0 0; padding: 0; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--creme-doux); }
+.produit-coloris li { display: inline-flex; align-items: center; gap: 0.45rem; }
+.pastille { width: 0.85rem; height: 0.85rem; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 1px var(--creme-trait); }
+.boutique-prevenir { margin-top: clamp(4.5rem, 9vw, 6.5rem); padding-top: clamp(3rem, 6vw, 4rem); border-top: 1px solid var(--creme-trait); text-align: center; }
+.boutique-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.2rem 2.2rem; margin-top: 2rem; }
+@media (max-width: 1000px) { .boutique-grille { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px) { .boutique-grille { grid-template-columns: 1fr; max-width: 24rem; margin-inline: auto; } }
+
+.boutique-bientot { max-width: 40rem; margin: clamp(3.5rem, 7vw, 5rem) auto 0; padding: clamp(2.6rem, 6vw, 4rem) clamp(1.4rem, 4vw, 3rem); text-align: center; border: 1px solid var(--or-trait); outline: 1px solid var(--creme-trait); outline-offset: -0.6rem; }
+.boutique-numero { font-family: var(--chiffres); font-size: 2.4rem; color: var(--terracotta); line-height: 1; }
+.boutique-bientot-titre { margin-top: 1rem; font-family: var(--display); font-weight: 400; font-size: clamp(1.6rem, 4vw, 2.3rem); letter-spacing: 0.03em; line-height: 1.15; -webkit-text-stroke: var(--epaisseur) currentColor; }
+.boutique-bientot-texte { margin-top: 1rem; color: var(--creme-doux); }
