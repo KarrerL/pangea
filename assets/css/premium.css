@@ -479,7 +479,7 @@ html.lenis, html.lenis body { height: auto; }
 .lieu-bloc::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
 .lieu-bloc-titre { font-family: var(--display); font-size: clamp(1.6rem, 3.2vw, 2.4rem); line-height: 1.2; letter-spacing: 0.03em; -webkit-text-stroke: var(--epaisseur) currentColor; }
 .lieu-bloc-texte { margin-top: 1.2rem; color: var(--creme-doux); }
-.lieu-bloc-statut { margin-top: 1.4rem; display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--or); }
+.lieu-bloc-statut { margin-top: 1.4rem; display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.3rem 0.6rem; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--or); }
 .demarche .piliers { margin-top: clamp(2.6rem, 6vw, 3.8rem); }
 
 /* ---------- Demande de réservation ---------- */
@@ -736,3 +736,8 @@ html.lenis, html.lenis body { height: auto; }
 .boutique-numero { font-family: var(--chiffres); font-size: 2.4rem; color: var(--terracotta); line-height: 1; }
 .boutique-bientot-titre { margin-top: 1rem; font-family: var(--display); font-weight: 400; font-size: clamp(1.6rem, 4vw, 2.3rem); letter-spacing: 0.03em; line-height: 1.15; -webkit-text-stroke: var(--epaisseur) currentColor; }
 .boutique-bientot-texte { margin-top: 1rem; color: var(--creme-doux); }
+
+/* Noms de lieux : jamais coupés aux traits d’union */
+.insecable { white-space: nowrap; }
+.lieu-bloc-texte { text-wrap: balance; }
+@media (max-width: 30rem) { .lieu-bloc-point { display: none; } .lieu-bloc-statut { flex-direction: column; } }
