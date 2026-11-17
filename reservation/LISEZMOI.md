@@ -23,7 +23,10 @@ Tant que cette ligne reste vide, le formulaire fonctionne en **mode démonstrati
 
 - Chaque demande devient une ligne de la feuille « Réservations ». Son statut est « Reçue », ou « Liste d'attente » quand il ne reste plus assez de couverts.
 - Le visiteur reçoit automatiquement un accusé de réception, et l'association un e-mail de notification. Vous pouvez désactiver l'un ou l'autre avec `ENVOYER_ACCUSE` et `PREVENIR_ASSO` en haut du script.
-- Pour **confirmer** une table, choisissez `Confirmée` dans le menu déroulant de la colonne Statut : le visiteur reçoit aussitôt un e-mail de confirmation.
+- Pour **confirmer** une table, choisissez son heure dans la colonne **Heure d’arrivée** (de 19 h 00 à 20 h 30), puis `Confirmée` dans la colonne Statut. L'e-mail de confirmation, avec l'heure, l'adresse et les informations pratiques, part dès que les deux sont renseignés, dans n'importe quel ordre.
+- La colonne **Importance (interne)** est réservée à l'équipe : choisissez `★★ Importante` (professeur, partenaire…) ou `★★★ Très importante` (direction, invité d'honneur…). La ligne se colore en safran ou en terracotta clair. Cette information n'apparaît dans aucun e-mail. Chaque nouvelle demande arrive en `★ Normale`.
+- Si vous changez l'heure d'une table déjà confirmée, le visiteur reçoit un e-mail « Votre horaire a changé ».
+- Les informations des e-mails (adresse, prix, paiement, lien du site) se règlent dans le bloc `INFOS` en haut du script. La fonction **apercuEmails** vous envoie les cinq e-mails pour les relire.
 - Pour **annuler**, choisissez `Annulée` : le visiteur reçoit un e-mail d'annulation et ses couverts redeviennent disponibles.
 - La colonne « E-mail de statut envoyé » garde la trace de chaque envoi. Un même statut n'envoie jamais deux e-mails à la même personne.
 - Le formulaire affiche le nombre de places restantes, mis à jour à chaque ouverture.
