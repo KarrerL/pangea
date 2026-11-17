@@ -192,7 +192,7 @@ body.tiroir-ouvert { overflow: hidden; }
   font-size: 0.6em; letter-spacing: 0; margin-bottom: 0.02em;
   translate: -0.09em 0;
 }
-.ouverture-titre .ligne { display: block; overflow: hidden; padding: 0 0.25em 0.12em; margin: 0 -0.25em -0.12em; }
+.ouverture-titre .ligne { display: block; overflow: hidden; padding: 0.25em 0.25em 0.14em; margin: -0.25em -0.25em -0.14em; }
 .ouverture-titre .ligne > span { display: inline-block; }
 .filet-or { display: block; width: 4.5rem; height: 1px; background: var(--or); margin: 2.4rem auto; }
 .ouverture-chapo { color: var(--creme-doux); font-size: clamp(1.02rem, 1.3vw, 1.18rem); margin-bottom: 2.6rem; }
@@ -200,7 +200,7 @@ body.tiroir-ouvert { overflow: hidden; }
 
 /* Texte découpé par le script : chaque mot reste insécable, les lettres montent derrière un masque */
 .mot { display: inline-block; white-space: nowrap; }
-[data-lettres] .mot { overflow: hidden; padding: 0 0.22em 0.16em 0.12em; margin: 0 -0.22em -0.16em -0.12em; vertical-align: top; }
+[data-lettres] .mot { overflow: hidden; padding: 0.22em 0.22em 0.18em 0.12em; margin: -0.22em -0.22em -0.18em -0.12em; vertical-align: top; }
 .car { display: inline-block; will-change: transform; }
 
 /* Rideau d'ouverture (première visite) */
@@ -666,3 +666,22 @@ html.lenis, html.lenis body { height: auto; }
 .ouverture-actions { align-items: center; gap: 1.6rem; }
 .photos-duo { align-items: start; }
 .photo--brigade .photo-cadre img { height: 108%; top: -4%; }
+
+/* ---------- Zones tactiles : au moins 44 px de haut sur écran tactile ---------- */
+@media (pointer: coarse), (max-width: 860px) {
+  .burger { min-height: 2.75rem; min-width: 2.75rem; }
+  .entete-reserver { min-height: 2.75rem; }
+  .lien-souligne, .pied-haut, .entete-retour { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  .pied-legal a, .tiroir-contact a, .legal-sommaire a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  .pied-legal { gap: 0 2.4rem; }
+  .legal-sommaire ol { gap: 0 1.8rem; }
+}
+@media (max-width: 380px) {
+  .entete { gap: 0.6rem; padding-inline: 1rem; }
+  .entete-logo { width: 6.6rem; }
+  .entete-reserver { padding: 0.6rem 0.75rem; letter-spacing: 0.14em; font-size: 0.6rem; }
+}
+@media (max-width: 600px) {
+  .interlude-ligne { font-size: 11.5vw; }
+  .interlude-ligne--1 { font-size: 7.4vw; }
+}
