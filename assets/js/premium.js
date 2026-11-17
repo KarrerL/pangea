@@ -11,7 +11,7 @@
 (() => {
   /* Adresse de l'application Web Google Apps Script qui enregistre les réservations
      (voir reservation/LISEZMOI.md). Vide = mode démonstration : rien n'est envoyé. */
-  const RESERVATION_URL = "";
+  const RESERVATION_URL = "https://script.google.com/macros/s/AKfycbzfcxuOhwgPmN9H8KyYXIWODox2iK1kwhcEdjlMn_w2PiSxY2_ONB0lpwXZjmrbBYk/exec";
   const racine = document.documentElement;
   const doux = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const souris = matchMedia("(hover: hover) and (pointer: fine)").matches;
