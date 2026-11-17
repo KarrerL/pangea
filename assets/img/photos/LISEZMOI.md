@@ -6,12 +6,13 @@ Déposez vos photos dans ce dossier **avec exactement ces noms**. Chacune appara
 |---|---|---|---|
 | `ouverture.jpg` | En plein écran derrière le titre d'ouverture (assombrie automatiquement) | Paysage 16:9, 2400 px de large | Une salle, une table ou une flamme, très sombre et chaude |
 | `ambiance-table.jpg` | Sous le manifeste (« Des plats que l'on goûte rarement… ») | Très large, 21:9, 2400 px de large | Une table dressée, lumière chaude du soir |
-| `lycee-cuisine.jpg` | Section « Notre projet », à gauche | Portrait 4:5, 1200 px de large | Les élèves de Paul Augier en cuisine (gestes, mains, dressage) |
-| `lycee-salle.jpg` | Section « Notre projet », à droite | Portrait 4:5, 1200 px de large | Le service en salle |
+| `cuisine.jpg` | Section « Notre projet », à gauche | Paysage 16:9, 1600 px de large | La cuisine (gestes, mains, dressage) |
+| `service.jpg` | Section « Notre projet », à droite | Paysage 4:3, 1400 px de large | Le service en salle |
 | `equipe.jpg` | Sous les portraits du bureau | Paysage 3:2, 2000 px de large | L'équipe PANGEA réunie |
-| `lieu.jpg` | À gauche du carton d'invitation | Portrait 4:5, 1200 px de large | La salle du dîner |
+| `lieu.jpg` | À gauche du carton d'invitation | Portrait 4:5, 1200 px de large | La salle du dîner (photo de la Villa Medusa, avec l’accord du restaurant) |
 
 Conseils :
 - Enregistrez en JPEG qualité 80 environ, pour moins de 400 Ko par photo.
 - Des tons chauds et une lumière douce, sans flash, collent le mieux au site.
-- Ne publiez une photo d'élèves ou du lycée qu'avec l'accord écrit du lycée et des personnes photographiées.
+- Ne publiez une photo du restaurant ou de personnes qu'avec l'accord écrit du restaurant et des personnes photographiées.
+- Photos actuelles : illustrations libres (Wikimedia Commons), créditées dans les mentions légales. Si vous les remplacez, mettez à jour les crédits.

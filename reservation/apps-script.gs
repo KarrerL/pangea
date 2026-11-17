@@ -33,9 +33,9 @@ const COULEURS_IMPORTANCE = { [IMPORTANCES[1]]: '#fbe7c2', [IMPORTANCES[2]]: '#f
 /* ---------- Informations pratiques des e-mails ----------
    Une valeur vide fait disparaître la ligne correspondante. */
 const INFOS = {
-  jour: 'Jeudi', quantieme: '4', mois: 'février 2027',
-  lieu: '',                                   // nom de la salle, à ajouter quand il pourra être annoncé
-  adresse: '163 Bd René Cassin, 06200 Nice',
+  jour: 'Jeudi', quantieme: '28', mois: 'janvier 2027',
+  lieu: 'Restaurant Villa Medusa',
+  adresse: '260 chemin de la Tour Carrée, 06700 Saint-Laurent-du-Var',
   prix: '',                                   // ex. '25 € par personne, boissons comprises'
   paiement: '',                               // ex. 'Sur place, en espèces ou par carte'
   site: '',                                   // ex. 'https://www.pangea.fr' : ajoute un lien vers la carte du dîner
@@ -227,7 +227,7 @@ function emailReception_(prenom, nom, couverts, attente) {
   const contenu = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:26px 0 30px;border-collapse:collapse;border-top:1px solid ${C.filet};border-bottom:1px solid ${C.filet}">
 <tr><td style="padding:20px 0;text-align:center">${etiquette_('Votre demande')}
 <p style="margin:8px 0 0;font:17px/1.5 ${SERIF};color:${C.encre}">${esc_(couverts)} couvert${Number(couverts) > 1 ? 's' : ''}, au nom de ${esc_(prenom)} ${esc_(nom)}</p>
-<p style="margin:4px 0 0;font:15px/1.5 ${SERIF};color:${C.doux}">${INFOS.jour} ${INFOS.quantieme} ${INFOS.mois}, en soirée</p></td></tr></table>`;
+<p style="margin:4px 0 0;font:15px/1.5 ${SERIF};color:${C.doux}">${INFOS.jour} ${INFOS.quantieme} ${INFOS.mois}, dès 19 h, à la Villa Medusa</p></td></tr></table>`;
   return attente
     ? { subject: "Vous êtes sur liste d'attente · Le dîner du monde",
         html: gabarit_('Liste d’attente', 'toutes les tables sont réservées pour le moment. Votre demande est inscrite sur liste d’attente : nous vous écrivons dès qu’une place se libère.', contenu, prenom),

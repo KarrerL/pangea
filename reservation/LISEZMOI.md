@@ -7,7 +7,7 @@ Les demandes de table envoyées depuis le site arrivent directement dans un Goog
 1. Connectez-vous au compte Google de l'association, puis créez un Google Sheet nommé par exemple « PANGEA · Réservations ».
 2. Dans ce tableur, ouvrez **Extensions > Apps Script**.
 3. Effacez le contenu du fichier `Code.gs`, collez tout le contenu de `apps-script.gs`, puis enregistrez.
-4. En haut du script, réglez `CAPACITE` sur le nombre total de couverts prévu avec le lycée.
+4. En haut du script, réglez `CAPACITE` sur le nombre total de couverts prévu avec le restaurant.
 5. Cliquez sur **Déployer > Nouveau déploiement**, puis :
    - type : **Application Web** ;
    - exécuter en tant que : **Moi** ;

@@ -289,10 +289,10 @@
     });
   }
 
-  /* ---------- Le lycée Paul Augier ---------- */
-  G.timeline({ scrollTrigger: { trigger: ".augier", start: "top 82%" }, defaults: { ease: "expo.out" } })
-    .from(".augier", { clipPath: "inset(0% 50% 0% 50%)", duration: 1.4, ease: "power4.inOut" })
-    .from(".augier > *", { y: 16 * k, opacity: 0, duration: 1.1, stagger: 0.12 }, 0.6);
+  /* ---------- Le lieu du dîner ---------- */
+  G.timeline({ scrollTrigger: { trigger: ".lieu-bloc", start: "top 82%" }, defaults: { ease: "expo.out" } })
+    .from(".lieu-bloc", { clipPath: "inset(0% 50% 0% 50%)", duration: 1.4, ease: "power4.inOut" })
+    .from(".lieu-bloc > *", { y: 16 * k, opacity: 0, duration: 1.1, stagger: 0.12 }, 0.6);
 
   /* ---------- Photos : se dévoilent, puis glissent doucement dans leur cadre ---------- */
   document.querySelectorAll(".photo-cadre img, .ouverture-photo img").forEach((img) => {
